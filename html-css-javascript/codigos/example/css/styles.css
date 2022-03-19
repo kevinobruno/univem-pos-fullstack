@@ -1,0 +1,63 @@
+#name {
+    margin: 100px;
+}
+
+.div-example {
+    background-color: aqua;
+    border: 2px solid darkblue;
+    padding: 80px;
+    margin: 80px;
+    width: 50%;
+}
+
+a {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    padding: 0px 10px 0px 10px;
+}
+
+a[href="index.html"] {
+    color: blue;
+}
+
+/* Grid  */
+.grid-wrapper {
+    background-color: orange;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100px 100px 100px;
+    padding: 10px;
+}
+
+.grid-box {
+    background-color: red;
+    border-radius: 20px;
+    font-size: large;
+    padding: 20px;
+}
+
+/* Flexbox  */
+.flex-container {
+    background-color: orange;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.flex-container > div {
+    background-color: red;
+    border-radius: 20px;
+    flex: 1 25%;
+    font-size: large;
+    padding: 20px;
+    text-align: center;
+}
+
+/* .flex-box {
+    background-color: red;
+    border-radius: 20px;
+    font-size: large;
+    padding: 20px;
+} */
