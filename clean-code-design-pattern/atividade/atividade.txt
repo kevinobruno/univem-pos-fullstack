@@ -1,0 +1,4 @@
+1 - Fazer o diagrama UML similar ao exemplo da Cafeteira
+2 - Fazer a implementação em java
+
+- Escolher apenas 3 das configurações, não precisa ser todas;
