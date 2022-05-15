@@ -1,0 +1,18 @@
+version: "3"
+services:
+  javaweb:
+    build: .
+    image: javaweb
+    container_name: javaweb
+    networks:
+      - mvc
+    ports:
+      - 7000:8080
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - ./src/main/webapp/pages:/usr/local/tomcat/webapps/javaweb/pages
+
+networks:
+  mvc:
+    external: true

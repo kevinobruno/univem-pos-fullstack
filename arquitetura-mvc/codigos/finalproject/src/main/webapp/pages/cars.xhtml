@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Carros</title>
+</h:head>
+<h:body>
+	<p:growl id="message" />
+	<h:form id="formList">
+		<p:panel header="Listagem de Carros">
+			<p:dataTable id="dataTable" value="#{carBean.cars}" var="car"
+				emptyMessage="Nenhum registro encontrado!" paginator="true"
+				rows="20">
+				<f:facet name="header">
+					<p:commandButton value="Novo" actionListener="#{carBean.create}"
+						update=":formCreate:panel" oncomplete="PF('dialog').show();" />
+				</f:facet>
+				<p:column headerText="Marca" sortBy="#{car.brand}"
+					filterBy="#{car.brand}">
+					<h:outputText value="#{car.brand}" />
+				</p:column>
+				<p:column headerText="Modelo" sortBy="#{car.model}"
+					filterBy="#{car.model}">
+					<h:outputText value="#{car.model}" />
+				</p:column>
+				<p:column headerText="Ano" sortBy="#{car.year}"
+					filterBy="#{car.year}">
+					<h:outputText value="#{car.year}" />
+				</p:column>
+				<p:column headerText="Tipo" sortBy="#{car.type}"
+					filterBy="#{car.type}">
+					<h:outputText value="#{car.type}" />
+				</p:column>
+				<p:column headerText="Opções">
+					<p:commandButton icon="ui-icon-trash"
+						actionListener="#{carBean.delete}"
+						update=":formList:dataTable :message">
+						<p:confirm icon="ui-icon-alert" header="Confirmação"
+							message="Tem certeza que deseja excluir esse carro?" />
+						<f:attribute name="selectedCar" value="#{car}" />
+					</p:commandButton>
+					<p:commandButton icon="ui-icon-pencil"
+						actionListener="#{carBean.update}"
+						update=":formCreate:panel :message"
+						oncomplete="PF('dialog').show();">
+						<f:attribute name="selectedCar" value="#{car}" />
+					</p:commandButton>
+				</p:column>
+			</p:dataTable>
+			<p:confirmDialog global="true">
+				<p:commandButton value="Sim" type="button"
+					styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+				<p:commandButton value="Não" type="button"
+					styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+			</p:confirmDialog>
+		</p:panel>
+	</h:form>
+
+	<p:dialog header="Formulário" widgetVar="dialog" modal="true"
+		draggable="true" resizable="false" closable="true">
+		<h:form id="formCreate">
+			<h:panelGrid id="panel" columns="2">
+				<p:outputLabel value="Marca: " />
+				<p:inputText maxLength="40" size="30" value="#{carBean.car.brand}" />
+				<p:outputLabel value="Modelo: " />
+				<p:inputText maxLength="40" size="30" value="#{carBean.car.model}" />
+				<p:outputLabel value="Ano: " />
+				<p:inputText maxLength="4" size="10" value="#{carBean.car.year}" />
+				<p:outputLabel value="Tipo: " />
+				<p:inputText maxLength="10" size="15" value="#{carBean.car.type}" />
+			</h:panelGrid>
+			<h:panelGrid columns="2">
+				<p:commandButton value="Salvar" actionListener="#{carBean.save}"
+					oncomplete="PF('dialog').hide();"
+					update=":formList:dataTable :message" />
+				<p:commandButton value="Fechar" oncomplete="PF('dialog').hide();" />
+			</h:panelGrid>
+		</h:form>
+	</p:dialog>
+</h:body>
+</html>

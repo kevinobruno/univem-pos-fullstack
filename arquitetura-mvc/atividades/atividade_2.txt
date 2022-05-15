@@ -1,0 +1,6 @@
+Para que serve o gerenciador de dependências?
+Para instalar bibliotecas que podem ser úteis no desenvolvimento da aplicação, como bibliotecas de conversões de data, tratamento de paylads, etc.
+
+Qual a diferença de biblioteca e framework?
+Biblioteca consiste em um conjunto de código para resolver um problema específico.
+Já o framework é um conjunto de código que por baixo pode usar várias bibliotecas e abstrai diversas tarefas para facilitar o desenvolvimento, como acesso ao banco de dados, etc.

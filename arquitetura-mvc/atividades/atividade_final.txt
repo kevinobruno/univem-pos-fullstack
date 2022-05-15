@@ -1,0 +1,13 @@
+ATIVIDADE FINAL MVC
+
+Considerando o diagrama abaixo, faça um projeto para:
+
+- Crie as classes indicadas dentro do pacote “domain” de seu projeto.
+- Efetue as anotações JPA correspondentes ao diagrama.
+- Inclua o mapeamento das classes no arquivo “hibernatecfg.xml” do seu projeto.
+- Execute a classe de criação de tabelas, “Teste.java”
+- Verifique se as tabelas foram criadas corretamente no banco de dados.
+- Implemente as telas dele.
+
+Ao término envie seu projeto em: https://drive.google.com/drive/folders/1bV_t_E_2AhzEgqNNE_Wzad2EYr4DY5LZ?usp=sharing
+Prazo final para entrega 15/04/2022

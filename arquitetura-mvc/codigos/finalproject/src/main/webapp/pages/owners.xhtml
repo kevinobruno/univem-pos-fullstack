@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Proprietários</title>
+</h:head>
+<h:body>
+	<p:growl id="message" />
+	<h:form id="formList">
+		<p:panel header="Listagem de Proprietários">
+			<p:dataTable id="dataTable" value="#{ownerBean.owners}" var="owner"
+				emptyMessage="Nenhum registro encontrado!" paginator="true"
+				rows="20">
+				<f:facet name="header">
+					<p:commandButton value="Novo" actionListener="#{ownerBean.create}"
+						update=":formCreate:panel" oncomplete="PF('dialog').show();" />
+				</f:facet>
+				<p:column headerText="Nome" sortBy="#{owner.name}"
+					filterBy="#{owner.name}">
+					<h:outputText value="#{owner.name}" />
+				</p:column>
+				<p:column headerText="Telefone">
+					<h:outputText value="#{owner.phone}" />
+				</p:column>
+				<p:column headerText="Endereço">
+					<h:outputText value="#{owner.address}" />
+				</p:column>
+				<p:column headerText="Idade" sortBy="#{owner.age}"
+					filterBy="#{owner.age}">
+					<h:outputText value="#{owner.age}" />
+				</p:column>
+				<p:column headerText="Carro">
+					<h:outputText value="#{owner.car.brand}" />
+					<h:outputText value=" - " />
+					<h:outputText value="#{owner.car.model}" />
+					<h:outputText value=" - " />
+					<h:outputText value="#{owner.car.year}" />
+				</p:column>
+				<p:column headerText="Opções">
+					<p:commandButton icon="ui-icon-trash"
+						actionListener="#{ownerBean.delete}"
+						update=":formList:dataTable :message">
+						<p:confirm icon="ui-icon-alert" header="Confirmação"
+							message="Tem certeza que deseja excluir esse proprietário?" />
+						<f:attribute name="selectedOwner" value="#{owner}" />
+					</p:commandButton>
+					<p:commandButton icon="ui-icon-pencil"
+						actionListener="#{ownerBean.update}"
+						update=":formCreate:panel :message"
+						oncomplete="PF('dialog').show();">
+						<f:attribute name="selectedOwner" value="#{owner}" />
+					</p:commandButton>
+				</p:column>
+			</p:dataTable>
+			<p:confirmDialog global="true">
+				<p:commandButton value="Sim" type="button"
+					styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+				<p:commandButton value="Não" type="button"
+					styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+			</p:confirmDialog>
+		</p:panel>
+	</h:form>
+
+	<p:dialog header="Formulário" widgetVar="dialog" modal="true"
+		draggable="true" resizable="false" closable="true">
+		<h:form id="formCreate">
+			<h:panelGrid id="panel" columns="2">
+				<p:outputLabel value="Nome: " />
+				<p:inputText maxLength="40" size="30"
+					value="#{ownerBean.owner.name}" />
+				<p:outputLabel value="Telefone: " />
+				<p:inputText maxLength="11" size="30"
+					value="#{ownerBean.owner.phone}" />
+				<p:outputLabel value="Endereço: " />
+				<p:inputText maxLength="200" size="30"
+					value="#{ownerBean.owner.address}" />
+				<p:outputLabel value="Idade: " />
+				<p:inputText maxLength="2" size="15" value="#{ownerBean.owner.age}" />
+				<p:selectOneMenu id="car" filter="true"
+					value="#{ownerBean.owner.car}"
+					converter="omnifaces.SelectItemsConverter">
+					<f:selectItem noSelectionOption="true"
+						itemLabel="Selecione um carro" />
+					<f:selectItems value="#{ownerBean.cars}" var="car"
+						itemValue="#{car}"
+						itemLabel="#{car.brand} - #{car.model} - #{car.year}" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+			<h:panelGrid columns="2">
+				<p:commandButton value="Salvar" actionListener="#{ownerBean.save}"
+					oncomplete="PF('dialog').hide();"
+					update=":formList:dataTable :message" />
+				<p:commandButton value="Fechar" oncomplete="PF('dialog').hide();" />
+			</h:panelGrid>
+		</h:form>
+	</p:dialog>
+</h:body>
+</html>
