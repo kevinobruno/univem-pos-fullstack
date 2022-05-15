@@ -1,0 +1,20 @@
+1 passo - linguagem úbiqua / glossário
+descrever todos os termos utilizados, porque usamos e o que cada um significa
+
+2 passo - criar bounded contexts
+criar histórias descrevendo os fluxos que o usuário faz dentro do sistema
+
+3 passo - modelagem estratégia
+separar histórias em contextos de "dominio principal" (core business), "dominio generico" e
+"dominio auxiliar" (compartilhado entre múltiplos contextos)
+
+4 passo - mapa de contexto
+descrever as dependências entre os dominios, idealmente não deve haver dependência cíclica
+o nucleo compartilhado deve ser descoberto nessa etapa, por meio dos dominios principais + seus
+dominios genericos
+
+5 passo - arquitetura contextual / building blocks
+separação dos contextos em webapp tier, background tier e database tier
+
+6 passo - definição de entidades dentro dos contextos / destilação do núcleo
+separar também o que é objeto agregadado, objeto de valor, repositório, serviço
