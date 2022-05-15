@@ -4,20 +4,16 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
         <script src="js/script.js"></script>
-        <title>Kevin Oliveira</title>
+        <title>Olá Mundo</title>
     </head>
-    <body onload="domTree()">
-        <h1 id="name">Kevin Oliveira</h1>
+    <body>
+        <h1 id="name">Título</h1>
         <p>Sábado, 19 de março de 2022</p>
-        <h2>Hobbies</h2>
         <ul>
             <li>Basquete</li>
             <li>Videogame</li>
         </ul>
-        <div>
-            <h1>Univem</h1>
-            <p>Pós-Graducação em Desenvolvimento Full Stack</p>
-        </div>
+        <h1>Div</h1>
         <div class="div-example">
             <h3 name="title">Exemplo</h3>
             <a href="index.html">Não clique aqui</a>
@@ -44,5 +40,37 @@
             <div class="flex-box">g</div>
             <div class="flex-box">h</div>
         </div>
+        <h1>Javascript</h1>
+        <button type="button" onclick="helloWorld()">Clique para usar o JS</button>
+        <h1>Formulário</h1>
+        <div>
+            <form>
+                <input id="input" type="text" />
+                <button type="button" onclick="submitForm()">Clique aqui</button>
+            </form>
+        </div>
+        <h1>AJAX</h1>
+        <div>
+            <input id="cepInput" type="text" />
+            <button type="button" onclick="sendRequest()">Busque seu CEP</button>
+            <div id="response">
+                <p id="cepError" class="error" />
+                <p id="cep">CEP:</p>
+                <p id="street">Rua:</p>
+                <p id="neighborhood">Bairro:</p>
+                <p id="city">Cidade:</p>
+                <p id="state">UF:</p>
+            </div>
+        </div>
+        <h1>Prompt/Callback</h1>
+        <div>
+            <button type="button" onclick="showPrompt(showName)">Clique aqui para mostrar um prompt</button>
+        </div>
     </body>
 </html>
+
+<!-- Projeto -->
+<!-- Completar a página do jeito que quiser -->
+<!-- Fazer uma consulta AJAX -->
+<!-- Enviar por email zipado: joao.favan@univem.edu.br -->
+<!-- Envio até dia 27/03 -->

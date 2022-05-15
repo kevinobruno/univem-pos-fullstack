@@ -1,5 +1,5 @@
 #name {
-    margin: 100px;
+    margin-top: 50px;
 }
 
 .div-example {
@@ -61,3 +61,8 @@ a[href="index.html"] {
     font-size: large;
     padding: 20px;
 } */
+
+.error {
+    color: red;
+    font-size: large;
+}

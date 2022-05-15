@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+        <script src="js/scripts.js"></script>
+        <script src="https://kit.fontawesome.com/d1d9d99714.js" crossorigin="anonymous"></script>
+        <title>Projeto HTML, CSS e JS</title>
+    </head>
+    <body>
+        <div class="header">
+            <img src="img/logo.png" />
+            <h1>Bom Carteiro</h1>
+            <form method="post">
+                <input type="text" placeholder="Busque nossos produtos"></input>
+                <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Produtos</a>
+            <a href="#">Quem somos</a>
+            <a href="#">Sobre</a>
+        </div>
+        <div class="main">
+            <input id="cepInput" type="text" placeholder="Busque seu CEP" />
+            <button type="button" onclick="searchCep()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div id="response">
+                <p id="cepError" class="error" />
+                <p id="cep">CEP:</p>
+                <p id="street">Rua:</p>
+                <p id="neighborhood">Bairro:</p>
+                <p id="city">Cidade:</p>
+                <p id="state">UF:</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Feito com ❤ do Brasil para o mundo. © 2022</p>
+            <p>Bom Carteiro S.A. — CNPJ: 00.000.000/0001-99 — Endereço: Rua Foo, n.º 999, Bairro Bar, Marília, SP - CEP 17500-001</p>
+        </div>
+    </body>
+</html>
