@@ -1,0 +1,31 @@
+.navbar {
+  align-items: center;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  height: 64px;
+}
+
+.navbar h1 {
+  color: var(--dark-color);
+  padding-left: 10px;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.navbar ul li a {
+  color: var(--primary-dark-color);
+  font-weight: bolder;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  color: var(--secondary-color);
+}

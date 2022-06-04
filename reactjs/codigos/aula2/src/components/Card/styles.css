@@ -1,0 +1,24 @@
+.card {
+  background-color: var(--light-color);
+  border-radius: 10px;
+  width: 500px;
+}
+
+.card-header, .card-footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  display: flex;
+  padding: 10px;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.card-header {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.card-footer {
+  border-radius: 0px 0px 10px 10px;
+  justify-content: flex-end;
+  font-style: italic;
+}
