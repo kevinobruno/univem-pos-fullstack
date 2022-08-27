@@ -1,0 +1,29 @@
+@model HotelSol.Application.ViewModels.CustomerViewModel
+
+<table id="room" class="table table-bordered table-hover">
+    <thead>
+        <tr class="">
+            <th>Id</th>
+            <th>Name</th>
+            <th>DocumentNumber</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>BirthDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr style="height: 60px;">
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>@customer.DocumentNumber</td>
+                <td>@customer.Address</td>
+                <td>@customer.Phone</td>
+                <td>@customer.Email</td>
+                <td>@customer.BirthDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

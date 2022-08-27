@@ -1,0 +1,27 @@
+@model HotelSol.Application.ViewModels.BookingViewModel
+
+<table id="room" class="table table-bordered table-hover">
+    <thead>
+        <tr class="">
+            <th>Id</th>
+            <th>Customer</th>
+            <th>Room</th>
+            <th>CheckInDate</th>
+            <th>CheckOutDate</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model.Bookings)
+        {
+            <tr style="height: 60px;">
+                <td>@booking.Id</td>
+                <td>@booking.Customer.Name</td>
+                <td>@booking.Room.Number</td>
+                <td>@booking.CheckInDate</td>
+                <td>@booking.CheckOutDate</td>
+                <td>@booking.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>

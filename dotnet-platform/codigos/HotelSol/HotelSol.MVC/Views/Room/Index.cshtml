@@ -1,0 +1,21 @@
+@model HotelSol.Application.ViewModels.RoomViewModel
+
+<table id="room" class="table table-bordered table-hover">
+    <thead>
+        <tr class="">
+            <th>Id</th>
+            <th>Number</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var room in Model.Rooms)
+        {
+            <tr style="height: 60px;">
+                <td>@room.Id</td>
+                <td>@room.Number</td>
+                <td>@room.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
