@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14  
+    commands:
+      - echo Instalando alguma coisa
+  pre_build:
+    commands:
+      - echo Fase do pre-build
+  build:
+    commands:
+      - echo Build iniciado
+      - grep -Fq "Univem" index.html
+  post_build:
+    commands:
+      - echo Build completado
+
+artifacts:
+  files:
+    - '**/*'
