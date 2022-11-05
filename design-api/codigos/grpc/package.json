@@ -1,0 +1,8 @@
+{
+  "name": "grpc",
+  "version": "1.0.0",
+  "dependencies": {
+    "@grpc/proto-loader": "0.5.0",
+    "@grpc/grpc-js": "1.1.0"
+  }
+}
